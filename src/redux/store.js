@@ -4,21 +4,21 @@
 
 
 // ///////////////////////////////////////////////////////////////Jo Redux Thunk Chal Rahi Hai Lekin Chat ki Waja Se Band Ki Hai
-// import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware,compose } from 'redux';
+// import thunk from 'redux-thunk';
+// import reducers from './reducers';
+
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// import createSagaMiddleware from 'redux-saga';
 
-// // import createSagaMiddleware from 'redux-saga';
-// import thunk from 'redux-thunk';
+// import sagas from './sagas';
 
-// import reducers from './reducers';
-// // import sagas from './sagas';
+// const sagaMiddleware = createSagaMiddleware();
 
-// // const sagaMiddleware = createSagaMiddleware();
+// const middlewares = [sagaMiddleware];
 
-// // const middlewares = [sagaMiddleware];
-
-// // eslint-disable-next-line import/prefer-default-export
+// eslint-disable-next-line import/prefer-default-export
 // export function configureStore(initialState) {
 //   const store = createStore(
 //     reducers,
@@ -41,7 +41,7 @@
 // }
 
 // /////////////////////////////////////////////Ye Woh Redux Hai Jo Theme Ki Hai 
-import { createStore, applyMiddleware, compose } from 'redux';
+// import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import sagas from './sagas';

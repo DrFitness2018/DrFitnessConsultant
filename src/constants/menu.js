@@ -392,7 +392,9 @@ const data = [
     id: 'Inbox',
     icon: 'simple-icon-speech ',
     label: 'Inbox',
-    to: `${adminRoot}/chatInbox`,
+    // to: `${adminRoot}/chatInbox`,
+    to: `${adminRoot}/applications/chat`,
+
   },
   {
     id: 'Appointments',

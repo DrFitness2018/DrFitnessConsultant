@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React,{useState} from 'react';
-import { Button, Row, Table } from 'reactstrap';
+import { Button, CardBody, CardTitle, Label, Row, Table } from 'reactstrap';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
 import Breadcrumb from 'containers/navs/Breadcrumb';
 import AddSlotsModal from "./AddSlotsModal";
@@ -45,8 +45,8 @@ const AdministratoDoctor = (props) => {
   const [addSlotModal, setsAddSlotModal] = useState(false);
   const data = props?.location?.item;
   const viewData ={
-    name:"ABC",
-    email_address:"abc@gmail.com",
+    name:"DR. SHAHEDA ANWAR	",
+    email_address:"DR.SHAHEDAANWAR@gmail.com",
     speciality:"Therapist",
     departments:"DPT"
   }
@@ -55,45 +55,45 @@ const AdministratoDoctor = (props) => {
     <div style={{ backgroundColor: "#f9f9f9" }}>
       <div className="container">
        
-        <div className="row center-childrens  pb-4">
+        <div className="row center-childrens card  pb-4">
           <div className="col-xl-6 col-md-6 col-12 containerWithShadow p-4">
-            <h5>Doctor Details</h5>
             <ul style={{ listStyle: "none" }}>
               <li>
-                <span
+                {/* <span
                   className="light-Color-Para"
                   style={{ fontSize: "12px", fontWeight: "500" }}
-                >
-                  DOCTOR NAME
-                </span>
-                <p>{viewData?.name}</p>
+                > */}
+                  <CardTitle>
+                    DOCTOR NAME
+                  </CardTitle>
+                  <CardBody className='p-0'>
+                  <p>{viewData?.name}</p>
+                  </CardBody>
+                {/* </span> */}
               </li>{" "}
               <li>
-                <span
-                  className="light-Color-Para"
-                  style={{ fontSize: "12px", fontWeight: "500" }}
-                >
-                  DOCTOR EMAIL
-                </span>
-                <p>{viewData?.email_address}</p>
+              <CardTitle>
+                    DOCTOR EMAIL
+                  </CardTitle>
+                  <CardBody className='p-0'>
+                  <p>{viewData?.email_address}</p>
+                  </CardBody>
               </li>{" "}
               <li>
-                <span
-                  className="light-Color-Para"
-                  style={{ fontSize: "12px", fontWeight: "500" }}
-                >
-                  SPECIALITY.
-                </span>
-                <p>{viewData?.speciality}</p>
+              <CardTitle>
+                    DOCTOR SPECIALITY
+                  </CardTitle>
+                  <CardBody className='p-0'>
+                  <p>{viewData?.speciality}</p>
+                  </CardBody>
               </li>
               <li>
-                <span
-                  className="light-Color-Para"
-                  style={{ fontSize: "12px", fontWeight: "500" }}
-                >
-                  DEPARTMENT
-                </span>
-                <p>{viewData?.departments}</p>
+              <CardTitle>
+                    DOCTOR DEPARTMENT
+                  </CardTitle>
+                  <CardBody className='p-0'>
+                  <p>{viewData?.departments}</p>
+                  </CardBody>
               </li>
             </ul>
             <div className="d-flex justify-content-between">

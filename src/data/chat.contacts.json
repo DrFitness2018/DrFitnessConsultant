@@ -2,14 +2,14 @@
     "data": [
         {
             "id": 0,
-            "name": "Sarah Kortney",
-            "thumb": "/assets/img/profiles/l-1.jpg",
+            "name": "Dr Sarah",
+            "thumb": "/assets/img/profiles/l-4.jpg",
             "lastSeenDate":"0"
         },
         {
             "id": 1,
-            "name": "Linn Ronning",
-            "thumb": "/assets/img/profiles/l-4.jpg",
+            "name": "Shahzaib Abdul Qadir",
+            "thumb": "/assets/img/profiles/l-1.jpg",
             "lastSeenDate":"Last seen today 15:24"
         },
         {
@@ -26,7 +26,7 @@
         },
         {
             "id": 4,
-            "name": "Brynn Bragg",
+            "name": "Wahaj",
             "thumb": "/assets/img/profiles/l-5.jpg",
             "lastSeenDate":"Last seen today 18:00"
         },

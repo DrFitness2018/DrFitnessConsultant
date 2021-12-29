@@ -114,7 +114,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                     <NavLink to="/user/forgot-password">
                       <IntlMessages id="user.forgot-password-question" />
                     </NavLink>
-                    <Link to='app/default/dashboard'>
+                    <Link to='/app/Profile/Profile'>
                     <Button
                       color="primary"
                       className={`btn-shadow btn-multiple-state ${

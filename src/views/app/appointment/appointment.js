@@ -15,9 +15,10 @@ import {
 } from 'reactstrap';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
 import Breadcrumb from 'containers/navs/Breadcrumb';
-import src from '../../../Images/lap-consul/1.JPG';
-import src1 from '../../../Images/lap-consul/2.JPG';
-import src2 from '../../../Images/lap-consul/3.JPG';
+import src1 from '../../../Images/mehmaams.PNG';
+import src2 from '../../../Images/shahzaibs.PNG';
+import src3 from '../../../Images/SHERA.jpg';
+import src from '../../../Images/tulaibs.PNG';
 import { NavLink } from 'react-router-dom';
 
 const Appointment = ({ match }) => {
@@ -26,30 +27,30 @@ const Appointment = ({ match }) => {
 
   const Appointments = [
     {
-      imgSrc: src,
-      label: 'DR. SHAHEDA ANWAR',
-      details: '10:00 12:30 1:00 1:30 2:00 2:30 3:00',
-      fee: 2000,
-      star: 1,
-      sex: 'Female',
-      Day: 'monday',
-      time: '2:00-2:00pm',
-      status: 'pending',
-    },
-    {
-      imgSrc: src,
-      label: 'DR. Ahmed KAzmi',
-      details: '10:00 12:30 1:00 1:30 2:00 2:30 3:00',
-      fee: 2000,
-      star: 1,
-      sex: 'Female',
-      Day: 'monday',
-      time: '2:00-2:00pm',
-      status: 'pending',
-    },
-    {
       imgSrc: src1,
-      label: 'DR. ASLAM PATHAN',
+      label: 'Mehmaam',
+      details: '10:00 12:30 1:00 1:30 2:00 2:30 3:00',
+      fee: 2000,
+      star: 1,
+      sex: 'Female',
+      Day: 'monday',
+      time: '2:00-2:00pm',
+      status: 'pending',
+    },
+    {
+      imgSrc: src,
+      label: 'Tulaib',
+      details: '10:00 12:30 1:00 1:30 2:00 2:30 3:00',
+      fee: 2000,
+      star: 1,
+      sex: 'Female',
+      Day: 'monday',
+      time: '2:00-2:00pm',
+      status: 'pending',
+    },
+    {
+      imgSrc: src2,
+      label: 'Shahzaib',
       details: '10:00 12:30 1:00 1:30 2:00 2:30 3:00',
       fee: 10000,
       star: 1,
@@ -59,8 +60,8 @@ const Appointment = ({ match }) => {
       status: 'approved',
     },
     {
-      imgSrc: src2,
-      label: 'DR. Tullu ',
+      imgSrc: src3,
+      label: 'Wahaj',
       details: '10:00 12:30 1:00 1:30 2:00 2:30 3:00',
       fee: 4000,
       star: 1,

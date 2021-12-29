@@ -41,7 +41,7 @@
 /* eslint-disable */
 // import { NotificationManager } from 'components/common/react-notifications';
 import React, { useEffect } from 'react';
-import { ButtonGroup, CardBody, Col, Row, Table } from 'reactstrap';
+import { ButtonGroup, CardBody, Col, CustomInput, InputGroup, InputGroupAddon, Row, Table } from 'reactstrap';
 import IntlMessages from 'helpers/IntlMessages';
 import Select from 'react-select';
 import CustomSelectInput from 'components/common/CustomSelectInput';
@@ -78,7 +78,7 @@ export default function Profile(props) {
           <Form>
             <Row className="h-100">
               <Col lg={12} className="mb-3">
-                <div className="patient-img-container center-childrens p-4">
+                <div className="d-flex p-3">
                   {/* <img
                   src={
                     user?.display_picture === '' ? logo : user?.display_picture
@@ -86,8 +86,25 @@ export default function Profile(props) {
                   alt=""
                   className="img-fluid"
                 /> */}
-                  <img src={logo} alt="" style={{objectFit:'contain',objectFit:'cover'}}/>
+                  <img
+                    src={logo}
+                    alt=""
+                    width="200px"
+                    height="200px"
+                    style={{ objectFit: 'contain', objectFit: 'cover' , borderRadius:'50%'}}
+                  />
                 </div>
+                     <Label>
+                      Change Profile Picture
+                    </Label>
+                    <InputGroup className="mb-3">
+                <InputGroupAddon addonType="prepend">Upload</InputGroupAddon>
+                <CustomInput
+                  type="file"
+                  id="exampleCustomFileBrowser1"
+                  name="customFile"
+                />
+              </InputGroup>
               </Col>
 
               {thisView ? (

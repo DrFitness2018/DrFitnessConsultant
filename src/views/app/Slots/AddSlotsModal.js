@@ -166,6 +166,7 @@ const onSubmit = async (data) => {
         <ModalHeader closeButton>
           {/* <ModalTitle id="contained-modal-title-vcenter"> */}
             Add Slots
+            <Button outline onClick={props.onHide } style={{marginLeft:'20px'}} >Close</Button>
           {/* </ModalTitle> */}
         </ModalHeader>
         <ModalBody>
