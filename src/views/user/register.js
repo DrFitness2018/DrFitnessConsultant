@@ -34,7 +34,7 @@ const Register = ({ history }) => {
       <Colxx xxs="12" md="12" className="mx-auto my-auto">
         <Card className="auth-card">
           <div className="position-relative image-side ">
-            <p className="text-white h2">MAGIC IS IN THE DETAILS</p>
+            <p className="text-white h2">FITNESS IS NOT JUST A GOAL, IT'S A LIFESTYLE</p>
             <p className="white mb-0">
               Please use this form to register. <br />
               If you are a member, please{' '}

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Row, Card, CardTitle, Label, FormGroup, Button } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { Formik, Form, Field } from 'formik';
@@ -57,7 +57,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
       <Colxx xxs="12" md="10" className="mx-auto my-auto">
         <Card className="auth-card">
           <div className="position-relative image-side ">
-            <p className="text-white h2">MAGIC IS IN THE DETAILS</p>
+            <p className="text-white h2">FITNESS IS NOT JUST A GOAL, IT'S A LIFESTYLE</p>
             <p className="white mb-0">
               Please use your credentials to login.
               <br />
@@ -114,6 +114,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                     <NavLink to="/user/forgot-password">
                       <IntlMessages id="user.forgot-password-question" />
                     </NavLink>
+                    <Link to='app/default/dashboard'>
                     <Button
                       color="primary"
                       className={`btn-shadow btn-multiple-state ${
@@ -121,6 +122,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                       }`}
                       size="lg"
                     >
+
                       <span className="spinner d-inline-block">
                         <span className="bounce1" />
                         <span className="bounce2" />
@@ -130,6 +132,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                         <IntlMessages id="user.login-button" />
                       </span>
                     </Button>
+                      </Link>
                   </div>
                 </Form>
               )}

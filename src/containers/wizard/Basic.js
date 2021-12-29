@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import { Card, CardBody, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Card, CardBody, CardTitle, CustomInput, Form, FormGroup, Input, InputGroup, InputGroupAddon, Label } from 'reactstrap';
 import { Wizard, Steps, Step } from 'react-albus';
 import { injectIntl } from 'react-intl';
 import IntlMessages from 'helpers/IntlMessages';
@@ -15,13 +15,16 @@ const Basic = ({ intl }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [age, setAge] = useState('');
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [chkdisease, setchkDisease] = useState('no');
+  const [address, setAddress] = useState('');
+  const [Degree, setDegree] = useState('');
+  const [conType, setconType] = useState('');
   const [disease, setDisease] = useState('');
-  const [injury, setInjury] = useState('');
-  const [chkinjury, setchkInjury] = useState('');
-  const [gender, setGender] = useState('');
+  const [institue, setinstitue] = useState('');
+  const [city, setcity] = useState('');
+  const [experienceOrg, setexperienceOrg] = useState('');
+  const [yearexp, setyearexp] = useState('');
+  const [designation, setdesignation] = useState('');
+  const [location, setlocation] = useState('');
 
 
   console.log(name, "name")
@@ -50,32 +53,6 @@ const Basic = ({ intl }) => {
 
   const { messages } = intl;
 
-  const [bmi, setBmi] = useState(0);
-
-  const calculate = () => {
-    
-    const bmi = +weight / (+height) ** 2;
-    setBmi(bmi);
-    let bmiResults="";
-    if (bmi <= 18.5) {
-      bmiResults = "Underweight";
-    } else if (bmi <= 24.9) {
-      bmiResults = "Normal weight";
-    } else if (bmi <= 29.9) {
-      bmiResults = "Overweight";
-    } else if (bmi >= 30) {
-      bmiResults = "Obesity";
-    } else {
-      bmiResults = "BMI";
-    }
-
-  };
-
-  
-
-
-  console.log("bmi -- >",bmi)
-
 
 
   return (
@@ -97,12 +74,12 @@ const Basic = ({ intl }) => {
                 <Form>
                   <FormGroup>
                     <Label>
-                      Name
+                      Full Name
                     </Label>
                     <Input
                       type="text"
                       name="name"
-                      placeholder="Ahmed"
+                      placeholder="Dr. / Mr. Ahmed"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
@@ -148,27 +125,31 @@ const Basic = ({ intl }) => {
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
                     />
-                    <Label>
-                      height
+                      <Label>
+                      Gender
                     </Label>
-                    <Input
-                      type="number"
-                      name="height"
-                      placeholder='Enter a in meter'
-                      value={height}
-                      onChange={(e) => setHeight(e.target.value)}
-                    />
-                    <Label>
-                      weight
-                    </Label>
-                    <Input
-                      type="number"
-                      name="weight"
-                      placeholder="Enter a in kgs"
-                      value={weight}
+                    <select
+                      name="gender"
+                      className="form-control"
                       onChange={(e) => {
-                        setWeight(e.target.value)
+                        setGender(e.target.value)
+                        // calculate()
                       }}
+                    >
+                      <option value="">Select an option..</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">other</option>
+                    </select>
+                    <Label>
+                      Address
+                    </Label>
+                    <Input
+                      type="text"
+                      name="address"
+                      placeholder="House#222,Area##,Karachi"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
                     />
                   </FormGroup>
                 </Form>
@@ -182,54 +163,91 @@ const Basic = ({ intl }) => {
               <div className="wizard-basic-step">
                 <Form>
                   <FormGroup>
+                  
                     <Label>
-                      Gender
-                    </Label>
-                    <select
-                      name="gender"
-                      className="form-control"
-                      onChange={(e) => {
-                        setGender(e.target.value)
-                        calculate()
-                      }}
-                    >
-                      <option value="">Select an option..</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">other</option>
-                    </select>
-
-                    <Label>
-                      Disease
+                      Consultation Type
                     </Label>
 
                     <select
-                      name="disease"
+                      name="conType"
                       className="form-control"
-                      onChange={(e) => setchkDisease(e.target.value)}
+                      onChange={(e) => setconType(e.target.value)}
                     >
-                      <option value="">Do you have any disease</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="">Consultation Type?</option>
+                      <option value="doctor">Doctor</option>
+                      <option value="trainer">Trainer</option>
                     </select>
 
                     {
-                      chkdisease === "yes" ?
+                      conType === "doctor" ?
                       <>
                       <Label>
-                      Please Specify your disease
+                      Degree
                     </Label>
                       <Input
                       type="text"
-                      name="disease"
-                      placeholder="ulcer, cardiac, asthama"
-                      value={disease}
-                      onChange={(e) => setDisease(e.target.value)}
+                      name="degree"
+                      placeholder="DPT,General Physician etc"
+                      value={Degree}
+                      onChange={(e) => setDegree(e.target.value)}
                     />
+                      <Label>
+                      Institute Name
+                    </Label>
+                      <Input
+                      type="text"
+                      name="institue"
+                      placeholder="Dow, Jinnah Medical"
+                      value={institue}
+                      onChange={(e) => setinstitue(e.target.value)}
+                    />
+                      <Label>
+                      City
+                    </Label>
+                      <Input
+                      type="text"
+                      name="city"
+                      placeholder="Karachi"
+                      value={city}
+                      onChange={(e) => setcity(e.target.value)}
+                    />
+                      <Label>
+                      Degree Image
+                    </Label>
+                    <InputGroup className="mb-3">
+                <InputGroupAddon addonType="prepend">Upload</InputGroupAddon>
+                <CustomInput
+                  type="file"
+                  id="exampleCustomFileBrowser1"
+                  name="customFile"
+                />
+              </InputGroup>
                       </>
-                    : 
-                    null
-                    
+                    :  conType === "trainer" ?
+                    <>
+                     <Label>
+                      Organization Name
+                    </Label>
+                      <Input
+                      type="text"
+                      name="institue"
+                      placeholder="Beast Gym,Hulk etc "
+                      value={institue}
+                      onChange={(e) => setinstitue(e.target.value)}
+                    />
+                     <Label>
+                      Professional Certificate
+                    </Label>
+                    <InputGroup className="mb-3">
+                <InputGroupAddon addonType="prepend">Upload</InputGroupAddon>
+                <CustomInput
+                  type="certificate"
+                  id="exampleCustomFileBrowser1"
+                  name="certificate"
+                />
+              </InputGroup>
+                    </>
+                    : ""
                     }
                     {/* <Input
                       type="text"
@@ -239,57 +257,56 @@ const Basic = ({ intl }) => {
                       onChange={(e) => setDisease(e.target.value)}
                     /> */}
                  <Label>
-                      Injury
+                      Experience
                     </Label>
-
-                    <select
-                      name="injury"
-                      className="form-control"
-                      onChange={(e) => setchkInjury(e.target.value)}  
-                    >
-                      <option value="">Do you have any Injury</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-
-                    {
-                      chkinjury === "yes" ?
-                      <>
-                      <Label>
-                      Please Specify your Injury
-                    </Label>
-                      <Input
+                    <Input
                       type="text"
-                      name="Injury"
-                      placeholder="Knee pain, back pain , shoulder disability"
-                      value={injury}
-                      onChange={(e) => setInjury(e.target.value)}
+                      name="experienceOrg"
+                      placeholder="Organization Name"
+                      value={experienceOrg}
+                      onChange={(e) => setexperienceOrg(e.target.value)}
                     />
-                      </>
-                    : 
-                    null
-                    
-                    }
+                 <Label>
+                      Years Of Experience
+                    </Label>
+                    <Input
+                      type="text"
+                      name="yearexp"
+                      placeholder="Organization Name"
+                      value={yearexp}
+                      onChange={(e) => setyearexp(e.target.value)}
+                    />
+                    <Label>
+                      Designation
+                    </Label>
+                    <Input
+                      type="text"
+                      name="designation"
+                      placeholder="Head, Junior, Assistant"
+                      value={designation}
+                      onChange={(e) => setdesignation(e.target.value)}
+                    />
+                    <Label>
+                      Location
+                    </Label>
+                    <Input
+                      type="text"
+                      name="location"
+                      placeholder="City , Country"
+                      value={location}
+                      onChange={(e) => setlocation(e.target.value)}
+                    />
+                  
+                
                   </FormGroup>
                 </Form>
               </div>
             </Step>
             <Step id="step4" hideTopNav>
-              <div className="wizard-basic-step text-center">
-                {/* <h2 className="mb-2">
-                  <IntlMessages id="wizard.content-thanks" />
-                </h2> */}
-
-                <h2>
-                  BMI result :::
-                </h2>
-
-                <Weight bmi ={bmi} /> 
-
-                <p>
-                  <IntlMessages id="wizard.registered" />
-                </p>
-              </div>
+                <CardTitle className='text-center'>Thank You For Registering In Dr Fitness</CardTitle>
+                <CardBody className='text-center'>We Have Recieved Your Information, You'll Recieve 
+                confrimation Email from our server shortly, After Verification of information you provided.
+                Email Will be provided with your Login Credentials</CardBody>
             </Step>
           </Steps>
           <BottomNavigation
@@ -307,129 +324,5 @@ const Basic = ({ intl }) => {
 
 
 
-
-function Weight(props) {
-
-  if (props.bmi <= 18.5) {
-    return (
-      <div
-      style={{
-        display: "flex",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        textAlign: "center",
-        maxWidth: "70%"
-      }}
-    >
-      <h2
-        style={{
-          fontWeight: "normal",
-          color:'#121212',
-
-          fontSize: "22px",
-        }}
-      >
-        According to your <span style={{color:'#63d471'}}> BMI ({props.bmi})</span> Your Weight is Too Low, we sugess
-        you to Gain some weight
-      </h2>
-      <h4
-        style={{
-          fontWeight: "normal",
-          color:'#121212',
-          fontSize: "22px",
-        }}
-      >
-        Don't know how to Gain? <span style={{color:'#63d471'}}> Follow our Exercise and Diet plan Accordingly</span>
-      </h4>
-      <Link to='/userDash' className="btn btn-outline-success">
-        Let's See
-      </Link>
-    </div>
-    );
-  } else if (props.bmi <= 24.9) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          textAlign: "center",
-        maxWidth: "70%"
-
-        }}
-      >
-        <h2
-          style={{
-            fontWeight: "normal",
-            fontSize: "22px",
-          color:'#121212',
-
-          }}
-        >
-          According to your <span style={{color:'#63d471'}}> BMI ({props.bmi})</span> Your Weight is Normal, we sugess
-          you to Maintain weight
-        </h2>
-        <h4
-          style={{
-            fontWeight: "normal",
-          color:'#121212',
-
-            fontSize: "22px",
-          }}
-        >
-        Don't know how to Maintain? <span style={{color:'#63d471'}}> Follow our Exercise and Diet plan Accordingly</span>
-        </h4>
-        <Link to='/userDash' className="btn btn-outline-light">
-          Let's See
-        </Link>
-      </div>
-    );
-  } else {
-    return (
-      <div
-        style={{
-          display: "flex",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          textAlign: "center",
-        maxWidth: "70%",
-        // backgroundColor:'red'
-
-        }}
-      >
-        <h2
-          style={{
-            fontWeight: "normal",
-          color:'#121212',
-
-            fontSize: "22px",
-          }}
-        >
-          According to your <span style={{color:'#63d471'}}> BMI ({props.bmi})</span> Your Weight is Too much, we sugess
-          you to Lean some weight
-        </h2>
-        <h4
-          style={{
-            fontWeight: "normal",
-          color:'#121212',
-
-            fontSize: "22px",
-          }}
-        >
-        Don't know how to Lean? <span style={{color:'#63d471'}}> Follow our Exercise and Diet plan Accordingly</span>
-        </h4>
-        <Link to='/userDash' className="btn btn-outline-success">
-          Let's See
-        </Link>
-      </div>
-    );
-  }
-}
 
 export default injectIntl(Basic);
