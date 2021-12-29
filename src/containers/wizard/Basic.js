@@ -245,7 +245,7 @@ const Basic = ({ intl }) => {
                     <select
                       name="injury"
                       className="form-control"
-                      onChange={(e) => setchkInjury(e.target.value)}
+                      onChange={(e) => setchkInjury(e.target.value)}  
                     >
                       <option value="">Do you have any Injury</option>
                       <option value="yes">Yes</option>

@@ -1,8 +1,9 @@
-/*eslint-disable*/
-import {combineReducers} from 'redux';
+// /*eslint-disable*/
+// import {combineReducers} from 'redux';
+// import { ExercisesReducer } from './exerciseInnerReducer';
 
-const reducers = combineReducers({
-    Exer:ExercisesReducer,
-})
+// const reducers = combineReducers({
+//     exersice:ExercisesReducer,
+// })
 
-export default reducers;
+// export default reducers;

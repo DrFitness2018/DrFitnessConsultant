@@ -71,7 +71,6 @@ const Appointment = ({ match }) => {
     },
   ];
 
-
   return (
     <>
       <Row>
@@ -184,6 +183,7 @@ const Appointment = ({ match }) => {
             </CardBody>
           </Card>
         </Colxx>
+      
       </Row>
     </>
   );
@@ -192,20 +192,17 @@ const Appointment = ({ match }) => {
 export default Appointment;
 
 const ImageCardList = (props) => {
-
-  const [getData,setGetData] = useState(props)
+  const [getData, setGetData] = useState(props);
   // console.log(props)
   // useEffect(() => {
-    // }, [getData])
-    
-    
-    const handleApprove =()=>{
-      if(props.status === 'pending' )
-      setGetData({...getData,status:"approved"})
-      console.log(getData)
-    }
-    console.log(getData)
+  // }, [getData])
 
+  const handleApprove = () => {
+    if (props.status === 'pending')
+      setGetData({ ...getData, status: 'approved' });
+    console.log(getData);
+  };
+  console.log(getData);
 
   return (
     <Row>
@@ -234,14 +231,15 @@ const ImageCardList = (props) => {
                     {props.time}
                   </p>
                   <div className="w-15 w-sm-100">
-                    <Button color='success' outline className='mr-2'
-                    onClick={handleApprove}
+                    <Button
+                      color="success"
+                      outline
+                      className="mr-2"
+                      onClick={handleApprove}
                     >
                       Approve
                     </Button>
-                    <Button color='danger'>
-                      Reject 
-                    </Button>
+                    <Button color="danger">Reject</Button>
                   </div>
                 </div>
                 <div className="custom-control custom-checkbox pl-1 align-self-center pr-4">
