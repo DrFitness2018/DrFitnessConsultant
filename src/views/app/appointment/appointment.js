@@ -11,6 +11,7 @@ import {
   FormGroup,
   Row,
   TabContent,
+  Table,
   TabPane,
 } from 'reactstrap';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
@@ -116,67 +117,179 @@ const Appointment = ({ match }) => {
               <TabContent activeTab={selectedRadio}>
                 <TabPane tabId="1">
                   <Row>
-                    <Colxx sm="12" lg="12">
-                      {Appointments &&
-                        Appointments.filter(
-                          (item) => item.status === 'pending'
-                        ).map((item, index) => {
-                          return (
-                            <ImageCardList
-                              mainTitle={item.label}
-                              image={item?.imgSrc}
-                              badge="Dr Fitness Recommended"
-                              day={item.Day}
-                              fee={item.fee}
-                              time={item.time}
-                              status={item.status}
-                            />
-                          );
-                        })}
+                  <Colxx sm="12" lg="12">
+                      <Card className="mb-4">
+                        <CardBody>
+                          <CardTitle>Pending Appointments</CardTitle>
+                          <Table hover responsive>
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>DP</th>
+                                <th>Doctor Name</th>
+                                <th>Appoitment Date</th>
+                                <th>Appoitment Time</th>
+                                <th>Status</th>
+                                <th>Fee</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            {Appointments &&
+                              Appointments.filter(
+                                (item) => item.status === 'pending'
+                              ).map((item, index) => {
+                                return (
+                                  <>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">{item.id}</th>
+                                        <td>
+                                          <img
+                                            src={item?.imgSrc}
+                                            width="50px"
+                                            height="50px"
+                                            style={{ borderRadius: '50%' }}
+                                          />
+                                        </td>
+                                        <td className="pt-50">{item.label}</td>
+                                        <td>{item.Day}</td>
+                                        <td>{item.time}</td>
+                                        <td>{item.status}</td>
+                                        <td>{item.fee}</td>
+                                        <td>{
+                                          item.status === 'pending' ? (
+                                            <Button style={{height:"20px",padding:10,paddingTop:0}} outline>Cancel</Button>
+                                            ) :
+                                          <Button style={{height:"20px",padding:10,paddingTop:0}} outline>Chat</Button>
+                                        }
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </>
+                                );
+                              })}{' '}
+                          </Table>
+                        </CardBody>
+                      </Card>
                     </Colxx>
                   </Row>
                 </TabPane>
                 <TabPane tabId="2">
                   <Row>
                     <Colxx sm="12" lg="12">
-                      {Appointments &&
-                        Appointments.filter(
-                          (item) => item.status === 'approved'
-                        ).map((item, index) => {
-                          return (
-                            <ImageCardList
-                              mainTitle={item.label}
-                              image={item?.imgSrc}
-                              badge="Dr Fitness Recommended"
-                              day={item.Day}
-                              fee={item.fee}
-                              time={item.time}
-                              status={item.status}
-                            />
-                          );
-                        })}{' '}
+                      <Card className="mb-4">
+                        <CardBody>
+                          <CardTitle>Approved By Doctor/Trainer</CardTitle>
+                          <Table hover responsive>
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th></th>
+                                <th>Doctor Name</th>
+                                <th>Appoitment Date</th>
+                                <th>Appoitment Time</th>
+                                <th>Status</th>
+                                <th>Fee</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            {Appointments &&
+                              Appointments.filter(
+                                (item) => item.status === 'approved'
+                              ).map((item, index) => {
+                                return (
+                                  <>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">{item.id}</th>
+                                        <td>
+                                          <img
+                                            src={item?.imgSrc}
+                                            width="50px"
+                                            height="50px"
+                                            style={{ borderRadius: '50%' }}
+                                          />
+                                        </td>
+                                        <td className="pt-50">{item.label}</td>
+                                        <td>{item.Day}</td>
+                                        <td>{item.time}</td>
+                                        <td>{item.status}</td>
+                                        <td>{item.fee}</td>
+                                        <td>{
+                                          item.status === 'pending' ? (
+                                            <Button>Cancel</Button>
+                                          ) :
+                                          <Button style={{height:"20px",padding:10,paddingTop:0}} outline>Chat</Button>
+                                        }
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </>
+                                );
+                              })}{' '}
+                          </Table>
+                        </CardBody>
+                      </Card>
                     </Colxx>
                   </Row>
                 </TabPane>
                 <TabPane tabId="3">
                   <Row>
-                    <Colxx sm="12" lg="12">
-                      {Appointments &&
-                        Appointments.filter(
-                          (item) => item.status === 'rejected'
-                        ).map((item, index) => {
-                          return (
-                            <ImageCardList
-                              mainTitle={item.label}
-                              image={item?.imgSrc}
-                              badge="Dr Fitness Recommended"
-                              day={item.Day}
-                              fee={item.fee}
-                              time={item.time}
-                              status={item.status}
-                            />
-                          );
-                        })}{' '}
+                  <Colxx sm="12" lg="12">
+                      <Card className="mb-4">
+                        <CardBody>
+                          <CardTitle>Rejected By Doctor/Trainer</CardTitle>
+                          <Table hover responsive>
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th></th>
+                                <th>Doctor Name</th>
+                                <th>Appoitment Date</th>
+                                <th>Appoitment Time</th>
+                                <th>Status</th>
+                                <th>Fee</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            {Appointments &&
+                              Appointments.filter(
+                                (item) => item.status === 'rejected'
+                              ).map((item, index) => {
+                                return (
+                                  <>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">{item.id}</th>
+                                        <td>
+                                          <img
+                                            src={item?.imgSrc}
+                                            width="50px"
+                                            height="50px"
+                                            style={{ borderRadius: '50%' }}
+                                          />
+                                        </td>
+                                        <td className="pt-50">{item.label}</td>
+                                        <td>{item.Day}</td>
+                                        <td>{item.time}</td>
+                                        <td>{item.status}</td>
+                                        <td>{item.fee}</td>
+                                        <td>{
+                                          item.status === 'rejected' ? (
+                                            <Button style={{height:"20px",padding:10,paddingTop:0}} outline>Reason</Button>
+
+                                          ) :
+                                          <Button style={{height:"20px",padding:10,paddingTop:0}} outline>Chat</Button>
+                                        }
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </>
+                                );
+                              })}{' '}
+                          </Table>
+                        </CardBody>
+                      </Card>
                     </Colxx>
                   </Row>
                 </TabPane>

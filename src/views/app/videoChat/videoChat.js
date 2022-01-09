@@ -29,6 +29,9 @@ const VideoChat = ({ match }) => {
             </Button>
           </a>
         </Colxx>
+        <Colxx xxs='12'>
+        <frame name="content" src="https://ckwmkqgcp232551idk02p9d6421-cc88s8pxn-drfitness2018.vercel.app/create" />
+        </Colxx>
       </Row>
     </>
   );

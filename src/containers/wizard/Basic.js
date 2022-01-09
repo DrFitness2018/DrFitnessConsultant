@@ -17,6 +17,7 @@ const Basic = ({ intl }) => {
   const [age, setAge] = useState('');
   const [address, setAddress] = useState('');
   const [Degree, setDegree] = useState('');
+  const [gender, setGender] = useState('');
   const [conType, setconType] = useState('');
   const [disease, setDisease] = useState('');
   const [institue, setinstitue] = useState('');
@@ -124,12 +125,13 @@ const Basic = ({ intl }) => {
                       placeholder="20"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
-                    />
+                      />
                       <Label>
                       Gender
                     </Label>
                     <select
                       name="gender"
+                      value={gender}
                       className="form-control"
                       onChange={(e) => {
                         setGender(e.target.value)
@@ -182,7 +184,7 @@ const Basic = ({ intl }) => {
                       conType === "doctor" ?
                       <>
                       <Label>
-                      Degree
+                      Speciality
                     </Label>
                       <Input
                       type="text"
@@ -212,7 +214,7 @@ const Basic = ({ intl }) => {
                       onChange={(e) => setcity(e.target.value)}
                     />
                       <Label>
-                      Degree Image
+                      Degree
                     </Label>
                     <InputGroup className="mb-3">
                 <InputGroupAddon addonType="prepend">Upload</InputGroupAddon>
